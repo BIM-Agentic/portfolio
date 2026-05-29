@@ -209,7 +209,113 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
 .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ── FOOTER ── */
+/* ── HAMBURGER BUTTON ── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;
+  gap:5px;background:none;border:1px solid var(--border);
+  border-radius:4px;padding:8px 10px;cursor:pointer;flex-shrink:0;
+  margin-left:auto;
+}
+.nav-hamburger span{
+  display:block;width:20px;height:2px;
+  background:var(--text);border-radius:2px;
+  transition:transform .3s,opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Tablet  ≤ 900px
+═══════════════════════════════════════════════════════ */
+@media(max-width:900px){
+  .tools-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .philosophy-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Mobile  ≤ 680px
+═══════════════════════════════════════════════════════ */
+@media(max-width:680px){
+
+  /* Nav — hamburger replaces link row */
+  .nav-hamburger{display:flex}
+  .nav-linkedin{display:none}
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:var(--nav-h);left:0;right:0;
+    background:rgba(8,8,14,.98);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(16px);
+    flex-direction:column;
+    padding:.75rem 1rem 1rem;
+    gap:.25rem;z-index:999;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{
+    width:100%;padding:.65rem 1rem;
+    border-radius:4px;font-size:.82rem;
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .nav-links a:last-child{border-bottom:none}
+
+  /* Hero */
+  .hero-meta{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:1.5rem 1rem;
+  }
+  .hero-subtitle{font-size:1rem}
+
+  /* Sections */
+  .section{padding:4rem 1rem}
+  .section-title{font-size:2.4rem}
+
+  /* Stats — 2 cols */
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat{padding:1.25rem 1rem}
+  .stat-num{font-size:2.2rem}
+
+  /* Philosophy — 1 col */
+  .philosophy-grid{grid-template-columns:1fr}
+
+  /* Tool cards — 1 col */
+  .tools-grid{grid-template-columns:1fr;gap:1rem}
+
+  /* Wide card — stack vertically */
+  .tool-card.wide{grid-template-columns:1fr;gap:1.25rem}
+
+  /* Stack grid — 3 cols */
+  .stack-grid{grid-template-columns:repeat(3,1fr)}
+
+  /* Contact buttons — stack */
+  .contact-links{flex-direction:column;align-items:center}
+  .contact-btn{width:100%;max-width:300px;justify-content:center}
+
+  /* Cat header */
+  .cat-title{font-size:1.3rem}
+
+  /* Tool card padding */
+  .tool-card{padding:1.4rem 1.2rem}
+  .tool-name{font-size:.82rem}
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Small Mobile  ≤ 390px  (iPhone SE / 14)
+═══════════════════════════════════════════════════════ */
+@media(max-width:390px){
+  .hero-meta{grid-template-columns:1fr 1fr;gap:1rem}
+  .meta-num{font-size:2.2rem}
+  .stats-row{grid-template-columns:1fr}
+  .stack-grid{grid-template-columns:repeat(2,1fr)}
+  .section-title{font-size:2rem}
+  .section{padding:3rem .85rem}
+  .top-nav{padding:0 1rem}
+  .nav-brand{font-size:1.1rem}
+}
+
 footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);border-top:1px solid var(--border)}
 
 /* ── ANIMATIONS ── */
@@ -224,7 +330,7 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
 <!-- FIXED TOP NAVIGATION -->
 <nav class="top-nav">
   <div class="nav-brand">BIM Agentic</div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#loads">Loads</a>
     <a href="#docs">Documentation</a>
@@ -234,6 +340,9 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
     <a href="#dev">In Dev</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <a class="nav-linkedin" href="https://www.linkedin.com/in/mostafa-ibrahem-01847a132/" target="_blank">LinkedIn ↗</a>
 </nav>
 
@@ -755,6 +864,23 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
 </footer>
 
 <script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('navHamburger');
+const navMenu   = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', ()=>{
+  hamburger.classList.toggle('open');
+  navMenu.classList.toggle('open');
+});
+
+// Close menu when a nav link is clicked
+navMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');
+    navMenu.classList.remove('open');
+  });
+});
+
 // Scroll reveal
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
