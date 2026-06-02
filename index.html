@@ -3,30 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIM Agentic — Automation Portfolio | Eng. Mostafa Nour</title>
+<title>BIM Agentic — AI & Structural Automation | Eng. Mostafa Nour</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-/* Offline-safe font fallbacks — portfolio works without internet too */
 :root {
   --font-display: 'Bebas Neue', 'Impact', 'Arial Narrow', Arial, sans-serif;
   --font-mono:    'Space Mono', 'Courier New', Courier, monospace;
-  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-                  'Helvetica Neue', Arial, sans-serif;
-}
-:root {
-  --bg:       #0a0a10;
-  --bg2:      #111119;
-  --bg3:      #1a1a26;
-  --border:   #2a2a3e;
-  --accent:   #00a2e8;
-  --green:    #2ee86c;
-  --orange:   #e87c2e;
-  --purple:   #a855f7;
-  --yellow:   #e8d32e;
-  --text:     #e8e8f2;
-  --muted:    #7878a0;
-  --card:     #13131f;
-  --nav-h:    58px;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Brand Palette — Minimalist Futuristic Orange/Amber Identity */
+  --bg:        #0a0806;
+  --bg2:       #120f0b;
+  --bg3:       #1c1711;
+  --border:    #2e241b;
+  --accent:    #e87c2e; /* Iconic BIM-Agentic Orange */
+  --accent-rgb: 232, 124, 46;
+  --green:     #2ee86c;
+  --text:      #f5ece3;
+  --muted:     #9c8978;
+  --card:      #17130e;
+  --nav-h:     58px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
@@ -36,14 +32,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .top-nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   height:var(--nav-h);
-  background:rgba(10,10,16,.92);
+  background:rgba(10,8,6,.92);
   border-bottom:1px solid var(--border);
   backdrop-filter:blur(12px);
   display:flex;align-items:center;
   padding:0 2rem;gap:2rem;
 }
 .nav-brand{
-  font-family:var(--font-display);font-size:1.3rem;
+  font-family:var(--font-display);font-size:1.5rem;
   color:var(--accent);letter-spacing:.08em;white-space:nowrap;flex-shrink:0;
 }
 .nav-links{
@@ -58,7 +54,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
   transition:color .18s,background .18s;
 }
 .nav-links a:hover,.nav-links a.active{
-  color:var(--accent);background:rgba(0,162,232,.1);
+  color:var(--accent);background:rgba(232,124,46,.1);
 }
 .nav-linkedin{
   flex-shrink:0;
@@ -68,21 +64,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
   padding:.38rem .9rem;border-radius:3px;letter-spacing:.05em;
   transition:background .18s;
 }
-.nav-linkedin:hover{background:#33bbff}
+.nav-linkedin:hover{background:#ff9955}
 
 /* ── HERO ── */
 .hero{
   min-height:100vh;display:grid;place-items:center;
-  background:radial-gradient(ellipse 80% 60% at 50% -10%,#002030 0%,transparent 60%),
-             linear-gradient(180deg,#0a0a10 0%,#080810 100%);
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,#3a1d0a 0%,transparent 60%),
+             linear-gradient(180deg,#0a0806 0%,#050403 100%);
   position:relative;overflow:hidden;
   padding-top:var(--nav-h);
 }
 .hero::before{
   content:'';position:absolute;inset:0;
   background:
-    repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(0,162,232,.04) 60px),
-    repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(0,162,232,.04) 60px);
+    repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(232,124,46,.03) 60px),
+    repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(232,124,46,.03) 60px);
   pointer-events:none;
 }
 .hero-inner{text-align:center;position:relative;z-index:1;padding:2rem}
@@ -90,16 +86,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
   display:inline-block;border:1px solid var(--accent);color:var(--accent);
   font-family:var(--font-mono);font-size:.75rem;letter-spacing:.15em;
   padding:.35rem 1rem;border-radius:2px;margin-bottom:2.5rem;
+  background:rgba(232,124,46,.05);
   animation:fadeIn .8s ease both;
 }
 .hero-title{
-  font-family:var(--font-display);font-size:clamp(4rem,12vw,9rem);
+  font-family:var(--font-display);font-size:clamp(3.5rem,11vw,8.5rem);
   line-height:.92;letter-spacing:.02em;margin-bottom:1.5rem;
   animation:slideUp .9s ease both .1s;
 }
 .hero-title .accent{color:var(--accent)}
 .hero-subtitle{
-  font-size:1.15rem;color:var(--muted);max-width:560px;margin:0 auto 3rem;
+  font-size:1.15rem;color:var(--muted);max-width:650px;margin:0 auto 3rem;
   animation:slideUp .9s ease both .2s;font-weight:300;
 }
 .hero-meta{
@@ -127,7 +124,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .section-label::after{content:'';flex:1;height:1px;background:var(--border)}
 .section-title{
   font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);
-  line-height:1;margin-bottom:.75rem;
+  line-height:1;margin-bottom:.75rem;letter-spacing:.02em;
 }
 .section-desc{color:var(--muted);max-width:620px;margin-bottom:3.5rem;font-weight:300}
 
@@ -144,15 +141,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 
 /* ── PHILOSOPHY ── */
 .philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:3rem}
-.phil-item{border-left:2px solid var(--accent);padding-left:1.25rem}
+.phil-item{border-left:2px solid var(--border);padding-left:1.25rem;transition:border-color .3s}
+.phil-item:hover{border-color:var(--accent)}
 .phil-title{font-family:var(--font-mono);font-size:.82rem;color:var(--accent);margin-bottom:.5rem}
 .phil-text{font-size:.88rem;color:var(--muted);font-weight:300}
-
-/* ── CATEGORY ── */
-.cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;margin-top:4rem}
-.cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.cat-title{font-family:var(--font-display);font-size:1.6rem;letter-spacing:.05em}
-.cat-line{flex:1;height:1px;background:var(--border)}
 
 /* ── TOOL CARDS ── */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
@@ -161,38 +153,36 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
   padding:1.8rem;transition:border-color .25s,transform .25s;
   position:relative;overflow:hidden;display:flex;flex-direction:column;
 }
-.tool-card:hover{border-color:var(--card-accent,var(--accent));transform:translateY(-3px)}
-.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--card-accent,var(--accent))}
+.tool-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
 .tool-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:.5rem}
 .tool-name{font-family:var(--font-mono);font-size:.9rem;color:var(--text);font-weight:700;margin-bottom:.2rem}
 .tool-version{font-size:.72rem;color:var(--muted)}
 .tool-status{font-size:.68rem;padding:.25rem .65rem;border-radius:2px;font-family:var(--font-mono);letter-spacing:.05em;white-space:nowrap;flex-shrink:0}
-.status-prod{background:#0d2a1a;color:var(--green);border:1px solid #1a4a2a}
-.status-dev{background:#1a2030;color:var(--accent);border:1px solid #2a3545}
-.status-plan{background:#2a1a0a;color:var(--orange);border:1px solid #3a2a0a}
+.status-prod{background:#1f130b;color:var(--accent);border:1px solid #3d2414}
+.status-dev{background:#111119;color:var(--muted);border:1px solid var(--border)}
 .tool-pain{font-size:.82rem;color:var(--muted);border-left:2px solid var(--border);padding-left:.8rem;margin-bottom:1.2rem;font-style:italic}
 .tool-features{list-style:none;margin-bottom:1.2rem;flex:1}
 .tool-features li{font-size:.82rem;padding:.25rem 0;display:flex;align-items:flex-start;gap:.5rem;color:var(--muted)}
-.tool-features li::before{content:'→';color:var(--card-accent,var(--accent));flex-shrink:0;margin-top:1px}
-.tool-desc{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem;font-weight:300;line-height:1.6}
+.tool-features li::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:1px}
 .tool-footer{
   display:flex;justify-content:space-between;align-items:center;
   border-top:1px solid var(--border);padding-top:1rem;margin-top:auto;flex-wrap:wrap;gap:.5rem;
 }
 .tool-roi{font-family:var(--font-mono);font-size:.75rem;color:var(--green)}
 .tool-tags{display:flex;gap:.4rem;flex-wrap:wrap}
-.tag{font-size:.68rem;padding:.15rem .5rem;background:#1a1a2e;border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:var(--font-mono)}
+.tag{font-size:.68rem;padding:.15rem .5rem;background:var(--bg2);border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:var(--font-mono)}
 
 .tool-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 @media(max-width:680px){.tool-card.wide{grid-template-columns:1fr}}
 
 /* ── TECH STACK ── */
 .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem}
-.stack-item{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.2rem;text-align:center;font-family:var(--font-mono);font-size:.78rem;color:var(--muted)}
-.stack-icon{font-size:1.8rem;display:block;margin-bottom:.5rem}
+.stack-item{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.2rem;text-align:center;font-family:var(--font-mono);font-size:.78rem;color:var(--muted);transition:border-color .2s}
+.stack-item:hover{border-color:var(--accent);color:var(--text)}
 
 /* ── CONTACT ── */
-.contact-section{background:var(--bg2);border-top:1px solid var(--border);padding:5rem 1.5rem;text-align:center}
+.contact-section{background:var(--bg2);border-top:1px solid var(--border);padding:6rem 1.5rem;text-align:center}
 .contact-inner{max-width:600px;margin:0 auto}
 .contact-title{font-family:var(--font-display);font-size:3.5rem;line-height:1;margin-bottom:1rem}
 .contact-title span{color:var(--accent)}
@@ -205,7 +195,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
   text-decoration:none;transition:all .2s;letter-spacing:.05em;
 }
 .btn-primary{background:var(--accent);color:#000;font-weight:700}
-.btn-primary:hover{background:#33bbff}
+.btn-primary:hover{background:#ff9955}
 .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
 .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -225,100 +215,38 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .nav-hamburger.open span:nth-child(2){opacity:0}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE — Tablet  ≤ 900px
-═══════════════════════════════════════════════════════ */
+/* ── RESPONSIVE MEDIA QUERIES ── */
 @media(max-width:900px){
   .tools-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
   .philosophy-grid{grid-template-columns:repeat(2,1fr)}
   .stats-row{grid-template-columns:repeat(2,1fr)}
 }
-
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE — Mobile  ≤ 680px
-═══════════════════════════════════════════════════════ */
 @media(max-width:680px){
-
-  /* Nav — hamburger replaces link row */
   .nav-hamburger{display:flex}
   .nav-linkedin{display:none}
-
   .nav-links{
-    display:none;
-    position:absolute;
-    top:var(--nav-h);left:0;right:0;
-    background:rgba(8,8,14,.98);
-    border-bottom:1px solid var(--border);
-    backdrop-filter:blur(16px);
-    flex-direction:column;
-    padding:.75rem 1rem 1rem;
-    gap:.25rem;z-index:999;
+    display:none;position:absolute;top:var(--nav-h);left:0;right:0;
+    background:rgba(10,8,6,.98);border-bottom:1px solid var(--border);
+    backdrop-filter:blur(16px);flex-direction:column;padding:.75rem 1rem 1rem;gap:.25rem;z-index:999;
   }
   .nav-links.open{display:flex}
-  .nav-links a{
-    width:100%;padding:.65rem 1rem;
-    border-radius:4px;font-size:.82rem;
-    border-bottom:1px solid rgba(255,255,255,.04);
-  }
-  .nav-links a:last-child{border-bottom:none}
-
-  /* Hero */
-  .hero-meta{
-    display:grid;grid-template-columns:1fr 1fr;
-    gap:1.5rem 1rem;
-  }
+  .nav-links a{width:100%;padding:.65rem 1rem;border-radius:4px;font-size:.82rem;border-bottom:1px solid rgba(255,255,255,.02)}
+  .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 1rem}
   .hero-subtitle{font-size:1rem}
-
-  /* Sections */
   .section{padding:4rem 1rem}
   .section-title{font-size:2.4rem}
-
-  /* Stats — 2 cols */
-  .stats-row{grid-template-columns:1fr 1fr}
-  .stat{padding:1.25rem 1rem}
-  .stat-num{font-size:2.2rem}
-
-  /* Philosophy — 1 col */
-  .philosophy-grid{grid-template-columns:1fr}
-
-  /* Tool cards — 1 col */
-  .tools-grid{grid-template-columns:1fr;gap:1rem}
-
-  /* Wide card — stack vertically */
-  .tool-card.wide{grid-template-columns:1fr;gap:1.25rem}
-
-  /* Stack grid — 3 cols */
+  .philosophy-grid,.tools-grid,.tool-card.wide{grid-template-columns:1fr}
   .stack-grid{grid-template-columns:repeat(3,1fr)}
-
-  /* Contact buttons — stack */
   .contact-links{flex-direction:column;align-items:center}
   .contact-btn{width:100%;max-width:300px;justify-content:center}
-
-  /* Cat header */
-  .cat-title{font-size:1.3rem}
-
-  /* Tool card padding */
-  .tool-card{padding:1.4rem 1.2rem}
-  .tool-name{font-size:.82rem}
 }
-
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE — Small Mobile  ≤ 390px  (iPhone SE / 14)
-═══════════════════════════════════════════════════════ */
 @media(max-width:390px){
-  .hero-meta{grid-template-columns:1fr 1fr;gap:1rem}
-  .meta-num{font-size:2.2rem}
-  .stats-row{grid-template-columns:1fr}
   .stack-grid{grid-template-columns:repeat(2,1fr)}
   .section-title{font-size:2rem}
-  .section{padding:3rem .85rem}
-  .top-nav{padding:0 1rem}
-  .nav-brand{font-size:1.1rem}
+  .nav-brand{font-size:1.2rem}
 }
-
 footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);border-top:1px solid var(--border)}
 
-/* ── ANIMATIONS ── */
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
@@ -327,17 +255,14 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
 </head>
 <body>
 
-<!-- FIXED TOP NAVIGATION -->
 <nav class="top-nav">
-  <div class="nav-brand">BIM Agentic</div>
+  <div class="nav-brand">BIM AGENTIC</div>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
-    <a href="#loads">Loads</a>
+    <a href="#loads">Loads & Analysis</a>
     <a href="#docs">Documentation</a>
-    <a href="#coordination">Coordination</a>
+    <a href="#coordination">Coordination & QA</a>
     <a href="#annotation">Annotation</a>
-    <a href="#modeling">Modeling</a>
-    <a href="#dev">In Dev</a>
     <a href="#contact">Contact</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
@@ -346,21 +271,20 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
   <a class="nav-linkedin" href="https://www.linkedin.com/in/mostafa-ibrahem-01847a132/" target="_blank">LinkedIn ↗</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="brand-tag">BIM AGENTIC · STRUCTURAL AUTOMATION</div>
+    <div class="brand-tag">BIM-AGENTIC · AGENTIC AI & STRUCTURAL AUTOMATION</div>
     <h1 class="hero-title">
-      <span style="display:block">Structural</span>
-      <span style="display:block;color:var(--accent)">BIM</span>
-      <span style="display:block">Automation</span>
+      <span style="display:block">INTELLIGENT</span>
+      <span style="display:block;color:var(--accent)">STRUCTURAL BIM</span>
+      <span style="display:block">AUTOMATION</span>
     </h1>
-    <p class="hero-subtitle">Production-grade pyRevit tools built for real projects, real teams, and real submission deadlines.</p>
+    <p class="hero-subtitle">Production-grade Revit API solutions and Agentic AI workflows built to scale structural engineering pipelines, eliminate manual errors, and meet critical submission deadlines.</p>
     <div class="hero-meta">
       <div class="meta-item"><span class="meta-num">16+</span><span class="meta-label">Scripts in Production</span></div>
-      <div class="meta-item"><span class="meta-num">80+</span><span class="meta-label">hrs/month saved</span></div>
-      <div class="meta-item"><span class="meta-num">20+</span><span class="meta-label">Years Structural BIM</span></div>
-      <div class="meta-item"><span class="meta-num">$0</span><span class="meta-label">vs $120/yr ProSheets</span></div>
+      <div class="meta-item"><span class="meta-num">80+ Hrs</span><span class="meta-label">Saved Per Month</span></div>
+      <div class="meta-item"><span class="meta-num">LOD 400</span><span class="meta-label">Modeling Standard</span></div>
+      <div class="meta-item"><span class="meta-num">$0</span><span class="meta-label">Cost vs ProSheets Premium</span></div>
     </div>
   </div>
   <div class="scroll-cue">
@@ -369,538 +293,230 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:.72
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section reveal" id="about">
-  <div class="section-label">About</div>
-  <h2 class="section-title">MOSTAFA NOUR</h2>
-  <p class="section-desc">Senior Structural BIM Technical & BIM Automation Specialist</p>
+  <div class="section-label">00 · Core Architecture</div>
+  <h2 class="section-title">ENGINEER & DEVELOPER</h2>
+  <p class="section-desc">Mostafa Nour — Senior Structural BIM Technical & BIM Automation Specialist</p>
 
   <div class="stats-row">
-    <div class="stat"><span class="stat-num">16+</span><span class="stat-label">Tools in Production</span></div>
-    <div class="stat"><span class="stat-num">$120</span><span class="stat-label">Saved per user/year vs ProSheets</span></div>
-    <div class="stat"><span class="stat-num">LOD 400</span><span class="stat-label">Structural Model Standard</span></div>
-    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Years of Structural BIM Experience</span></div>
+    <div class="stat"><span class="stat-num">Revit API</span><span class="stat-label">Python & C# Engines</span></div>
+    <div class="stat"><span class="stat-num">Agentic AI</span><span class="stat-label">LLM-to-BIM Pipelines</span></div>
+    <div class="stat"><span class="stat-num">Zero-Fault</span><span class="stat-label">Submission Day Target</span></div>
+    <div class="stat"><span class="stat-num">Scalable</span><span class="stat-label">Multi-User Configurations</span></div>
   </div>
 
   <div class="philosophy-grid">
-    <div class="phil-item"><div class="phil-title">PRODUCTION FIRST</div><div class="phil-text">Every tool survives submission day. No exceptions. Built for 200+ sheet exports and 400-element clash reviews.</div></div>
-    <div class="phil-item"><div class="phil-title">BRANDED SYSTEM</div><div class="phil-text">All tools share the BIM Agentic UI standard: dark WinForms, blue accent, version tracking, HTML audit reports.</div></div>
-    <div class="phil-item"><div class="phil-title">TEAM-FIRST SHARING</div><div class="phil-text">JSON config files let PMs define naming standards once. The whole team loads one file and exports consistently.</div></div>
-    <div class="phil-item"><div class="phil-title">CODE STANDARDS</div><div class="phil-text">IronPython 2.7 compatible. All ASCII. Revit API best practices. Documented, modular, maintainable.</div></div>
+    <div class="phil-item"><div class="phil-title">PRODUCTION FIRST</div><div class="phil-text">Every tool is hardened for extreme delivery conditions. Built to handle 200+ structural sheets and heavy cross-linked data validation without crashing.</div></div>
+    <div class="phil-item"><div class="phil-title">AGENTIC VISION</div><div class="phil-text">Integrating Model Context Protocol (MCP) servers and AI agents directly into Revit, allowing large language models to assist in data querying and structural modeling tasks.</div></div>
+    <div class="phil-item"><div class="phil-title">TEAM-CENTRIC SYSTEMS</div><div class="phil-text">Decoupled configuration layers using JSON. Standards are defined once by Project Managers; the entire engineering team runs unified, compliant scripts effortlessly.</div></div>
+    <div class="phil-item"><div class="phil-title">CLEAN CODE STANDARDS</div><div class="phil-text">Strict Revit API thread-safe transactions, comprehensive exception logging, backwards-compatible IronPython structures, and native WPF interface integration.</div></div>
   </div>
 </section>
 
-<!-- STRUCTURAL LOADS -->
 <section class="section reveal" id="loads">
   <div class="section-label">Category 01</div>
-  <h2 class="section-title">Structural Loads</h2>
-  <p class="section-desc">Automate ECP 201 & ASCE 7 load application from linked Arch models, with automatic legend generation.</p>
+  <h2 class="section-title">Structural Loads & Engineering</h2>
+  <p class="section-desc">Automated ECP 201 & ASCE 7 load application directly from linked Architectural models, backed by robust verification UI systems.</p>
 
   <div class="tools-grid">
-    <div class="tool-card" style="--card-accent:var(--green)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Load Manager</div><div class="tool-version">v2.01 · Area Loads · ECP 201 / ASCE 7</div></div>
+        <div><div class="tool-name">Load Manager</div><div class="tool-version">v2.0 · Occupancy Area Loads</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"Applying loads to 400 rooms manually before every submission. 3 engineers, 3 different load values for the same room type."</p>
+      <p class="tool-pain">"Manually querying room types from Arch links to calculate dead/live loads across hundreds of spaces is a critical failure point on deadlines."</p>
       <ul class="tool-features">
-        <li>Reads rooms from linked AR model (cross-document)</li>
-        <li>ECP 201 & ASCE 7 occupancy load database built-in</li>
-        <li>Color-coded FilledRegion overlays by usage type</li>
-        <li>Shared parameters: LM_Usage, LM_DL, LM_LL</li>
-        <li>Elevation-based level matching across linked files</li>
+        <li>Cross-document parsing of space/room geometry from linked models</li>
+        <li>Hardcoded database mapping for ECP 201 & ASCE 7 load values</li>
+        <li>Automated generation of color-coded FilledRegions for plan reviews</li>
+        <li>Appends synchronized structural Shared Parameters dynamically</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~15 hrs/submission saved</div>
-        <div class="tool-tags"><span class="tag">FilledRegion</span><span class="tag">ECP201</span><span class="tag">Linked Model</span></div>
+        <div class="tool-roi">⏱ ~15 hrs / submission saved</div>
+        <div class="tool-tags"><span class="tag">Link-Geometry</span><span class="tag">ECP 201</span><span class="tag">SharedParams</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--green)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Wall Line Load</div><div class="tool-version">v2.2 · Line Loads · ECP 201</div></div>
+        <div><div class="tool-name">Wall Line Load</div><div class="tool-version">v2.2 · Linear Load Automation</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"54 walls. Manual calculation every one. Senior reviews — 3 different brick densities across 3 engineers on the same project."</p>
+      <p class="tool-pain">"Engineers tracking shifting brick densities and manual heights across complex partition layups leads to inaccurate design calculations."</p>
       <ul class="tool-features">
-        <li>Scans walls: auto-detects type, thickness, height</li>
-        <li>ECP 201 density mapping with interactive review panel</li>
-        <li>Labels rotate with wall direction on centerline</li>
-        <li>Format: Brick_200mm  DL=10.8 kN/m  H=3650mm</li>
+        <li>Scans wall geometry to auto-calculate real structural volume and thickness</li>
+        <li>Integrates dynamic ECP 201 brick density selection via custom WinForms UI</li>
+        <li>Automates analytical line load tracking and generates custom geometric markers</li>
+        <li>Aligns annotations along wall centerlines regardless of rotation angle</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~12 hrs/month saved</div>
-        <div class="tool-tags"><span class="tag">TextNote API</span><span class="tag">WinForms</span><span class="tag">ECP201</span></div>
+        <div class="tool-roi">⏱ ~12 hrs / month saved</div>
+        <div class="tool-tags"><span class="tag">Analytical API</span><span class="tag">WinForms</span><span class="tag">Vector Math</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--green)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Loading Legend</div><div class="tool-version">v4.01 · Auto-Legend Generator</div></div>
+        <div><div class="tool-name">Excavation Generator</div><div class="tool-version">v1.0 · Topography Automation</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"After applying loads, the legend needs manual updates every time a new room type is added or color changes."</p>
+      <p class="tool-pain">"Modeling massive structural excavation pits and matching sloped boundary conditions to subgrade basements is a slow geometric process."</p>
       <ul class="tool-features">
-        <li>Auto-generates legend from current Load Manager data</li>
-        <li>Color swatches + usage description + DL / LL values</li>
-        <li>Updates automatically when loads change</li>
-        <li>Placed on drawing sheet with adjustable position</li>
+        <li>Generates excavation profiles automatically using structural foundation outlines</li>
+        <li>Applies user-defined slope calculations based on soil report constraints</li>
+        <li>Performs instant volume cut-and-fill math directly inside Revit environment</li>
+        <li>Modifies native Topography meshes seamlessly without data loss</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~2 hrs/submission saved</div>
-        <div class="tool-tags"><span class="tag">Legend API</span><span class="tag">FilledRegion</span><span class="tag">ECP201</span></div>
+        <div class="tool-roi">⏱ ~8 hrs / project saved</div>
+        <div class="tool-tags"><span class="tag">Topography</span><span class="tag">Solid-Intersection</span><span class="tag">Soil Mesh</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DOCUMENTATION -->
 <section class="section reveal" id="docs">
   <div class="section-label">Category 02</div>
-  <h2 class="section-title">Documentation & Submission</h2>
-  <p class="section-desc">From view management to professional submission packages — replacing $120/user/year tools with free BIM Agentic automation.</p>
+  <h2 class="section-title">Documentation & Delivery Package</h2>
+  <p class="section-desc">Automated batch managers that eliminate tedious packaging workflows. Custom open-source replacements for expensive single-user add-ins.</p>
 
   <div class="tools-grid">
-    <div class="tool-card wide" style="--card-accent:var(--accent)">
+    <div class="tool-card wide">
       <div>
         <div class="tool-header">
-          <div><div class="tool-name">BIM Export Manager</div><div class="tool-version">v1.0 · Submission Package Generator</div></div>
+          <div><div class="tool-name">BIM Export Manager</div><div class="tool-version">v1.0 · Advanced Package Publisher</div></div>
           <div class="tool-status status-prod">PRODUCTION</div>
         </div>
-        <p class="tool-pain">"100 sheets. Manual export. Manual rename. Manual transmittal. 2+ hours every submission day. One empty 'Drawn By' field — client rejects the package."</p>
+        <p class="tool-pain">"Spending half a day manually renaming PDFs, mapping DWG CAD layers, and cross-checking drawing revision metadata before a major client submission."</p>
         <div class="tool-footer" style="margin-top:1rem">
-          <div class="tool-roi">⏱ ~20 hrs/month saved · Free vs ProSheets $120/user/yr</div>
+          <div class="tool-roi">⏱ ~20 hrs / month saved · Open Source Enterprise Solution</div>
         </div>
       </div>
       <div>
         <ul class="tool-features">
-          <li>Token Builder: filename from ANY Revit parameter</li>
-          <li>Live Preview Grid: see all filenames before export</li>
-          <li>Pre-Export QC Check: verify Drawn By, Revision, Checked By</li>
-          <li>Auto-Subfolder: PDF/Structural/, BIND/DWG/ by discipline</li>
-          <li>DWG Export Setup: reads saved layer mappings from model</li>
-          <li>PDF Options: Vector/Raster, Color/Grayscale, scope boxes, combine</li>
-          <li>Config Sharing: PM saves JSON, team loads one file</li>
+          <li>Custom Token Builder: Construct filenames from complex project parameters</li>
+          <li>Live Validation Grid: Pre-flight checks for empty fields (Drawn By, Revisions)</li>
+          <li>Multithreaded Export: Parallel generation of PDF and bound/unbound DWGs</li>
+          <li>Disciplined Folder Structures: Automatic routing to organized delivery folders</li>
+          <li>JSON-based configurations for global project-wide standardization</li>
         </ul>
-        <div class="tool-tags"><span class="tag">PDFExportOptions</span><span class="tag">DWGExportOptions</span><span class="tag">JSON Config</span><span class="tag">QC Engine</span></div>
+        <div class="tool-tags"><span class="tag">PDFExportOptions</span><span class="tag">DWG-Bind</span><span class="tag">JSON Sync</span><span class="tag">QC Engine</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--accent)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Smart Renamer</div><div class="tool-version">v4.0 · Batch View & Sheet Rename</div></div>
+        <div><div class="tool-name">Smart View Renamer</div><div class="tool-version">v4.0 · Regex View/Sheet Re-ordering</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"200+ views to rename before submission. One at a time, no preview, easy to break live drawings."</p>
+      <p class="tool-pain">"Fixing individual view names and sheet prefixes item-by-item violates submission standards and wastes precious drafting hours."</p>
       <ul class="tool-features">
-        <li>Multi-step rule chain: sequential find/replace</li>
-        <li>Sheet Number rename (separate from Name)</li>
-        <li>Numbering Sequence: {n} token with padding</li>
-        <li>Show Changes Only + name conflict validation</li>
+        <li>Multi-step rule stacking engine powered by regular expressions (Regex)</li>
+        <li>Separate processing pipelines for Sheet Numbers, Names, and Detail View parameters</li>
+        <li>Automated sequential padding tokens ({n}) for structured schematic sets</li>
+        <li>Real-time collision checking and prefix safety barriers</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~8 hrs/submission saved</div>
-        <div class="tool-tags"><span class="tag">pyRevit</span><span class="tag">regex</span><span class="tag">WinForms</span></div>
+        <div class="tool-roi">⏱ ~8 hrs / delivery saved</div>
+        <div class="tool-tags"><span class="tag">Regex</span><span class="tag">Parameter API</span><span class="tag">Batch Processing</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--accent)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Place Views on Sheet</div><div class="tool-version">v1.0 · Batch View Placement</div></div>
+        <div><div class="tool-name">View Placement Automation</div><div class="tool-version">v1.2 · Spatial View Sheet Sync</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"Placing 50 plan views onto 50 sheets one by one. Drag, position, repeat — an hour of work before every submission."</p>
+      <p class="tool-pain">"Manually dropping dozens of floor plan views onto matching structural title blocks and aligning their coordinate origins is tedious."</p>
       <ul class="tool-features">
-        <li>Batch-places multiple views onto sheets automatically</li>
-        <li>Matches views to sheets by naming convention or selection</li>
-        <li>Configurable position: center, corner offset, custom X/Y</li>
-        <li>Skips already-placed views, reports results</li>
+        <li>Instantly associates multi-level views to target sheets using naming arrays</li>
+        <li>Controls placement coordinates precisely using absolute geometric offsets</li>
+        <li>Handles multi-viewport generation and dynamically centers complex detail keys</li>
+        <li>Flags unplaced structural views and logs successful placements into an HTML sheet audit</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~5 hrs/submission saved</div>
-        <div class="tool-tags"><span class="tag">ViewSheet API</span><span class="tag">Viewport</span><span class="tag">WinForms</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--accent)">
-      <div class="tool-header">
-        <div><div class="tool-name">Scope Box Manager</div><div class="tool-version">v1.0 · Scope Box Control Panel</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Managing scope boxes across 200 views manually — assigning, resizing, and naming them is time-consuming and error-prone."</p>
-      <ul class="tool-features">
-        <li>Create, rename, and resize scope boxes in bulk</li>
-        <li>Assign scope boxes to multiple views at once</li>
-        <li>Preview which views use each scope box</li>
-        <li>Clean up unused scope boxes with one click</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~4 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">ScopeBox API</span><span class="tag">View API</span><span class="tag">WinForms</span></div>
+        <div class="tool-roi">⏱ ~5 hrs / project saved</div>
+        <div class="tool-tags"><span class="tag">Viewport API</span><span class="tag">Sheet Geometry</span><span class="tag">Audit Log</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COORDINATION -->
 <section class="section reveal" id="coordination">
   <div class="section-label">Category 03</div>
-  <h2 class="section-title">Coordination & QA</h2>
-  <p class="section-desc">Catch problems before they become site issues. Coordinate across disciplines with automated checking and one-click fixes.</p>
+  <h2 class="section-title">Cross-Discipline Coordination & QA</h2>
+  <p class="section-desc">Detect structural alignment anomalies, manage clash detection workspaces, and ensure modeling fidelity before field execution.</p>
 
   <div class="tools-grid">
-    <div class="tool-card" style="--card-accent:var(--orange)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Coordinate Manager</div><div class="tool-version">v1.0 · AR↔STR Coordinate Sync</div></div>
+        <div><div class="tool-name">Coordinate Sync Manager</div><div class="tool-version">v1.0 · AR / STR Spatial Audit</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"After linking the Arch model the structural building is floating 1.25m off in X and rotated 2.3°. Nobody notices until clash detection."</p>
+      <p class="tool-pain">"Slight rotations or Z-axis shifts between structural foundations and architectural links often go unnoticed until late coordination phases."</p>
       <ul class="tool-features">
-        <li>6-check diagnostic: ΔX, ΔY, ΔZ, Rotation, PBP, Link status</li>
-        <li>Level Comparison Grid: STR vs AR elevation by name (mm)</li>
-        <li>One-click Acquire Coordinates fix</li>
-        <li>HTML audit report for QA records</li>
+        <li>6-point continuous coordinate vector monitoring (ΔX, ΔY, ΔZ, Rotation, PBP, Link Status)</li>
+        <li>Matrix transformation verification between host models and global space</li>
+        <li>Automated elevation difference scanner comparing structural slabs to architectural references</li>
+        <li>One-click shared coordinate alignment fixing tool</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~3 hrs/project + prevents errors</div>
-        <div class="tool-tags"><span class="tag">ProjectLocation</span><span class="tag">BasePoint</span><span class="tag">Transform</span></div>
+        <div class="tool-roi">⏱ Risk Mitigation + 3 hrs / setup</div>
+        <div class="tool-tags"><span class="tag">Transform Matrix</span><span class="tag">ProjectLocation</span><span class="tag">QA</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--orange)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Navisworks Clash Navigator</div><div class="tool-version">v1.0 · Live Clash Review Panel</div></div>
+        <div><div class="tool-name">Navisworks Clash Navigator</div><div class="tool-version">v1.0 · Live Clash Resolver</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"400 clashes. Click, find, zoom, annotate — one by one. 10 seconds each = 1 hour just navigating. No persistent panel."</p>
+      <p class="tool-pain">"Reviewing thousands of clash reports by manually searching for Element IDs inside native Revit models is an incredibly slow workflow."</p>
       <ul class="tool-features">
-        <li>Live WPF panel stays open during entire review session</li>
-        <li>Auto-creates named 3D view with section box per clash</li>
-        <li>Red/blue graphic overrides for clashing elements</li>
-        <li>HTML parser with 3 fallback strategies for element IDs</li>
+        <li>Persistent non-modal WPF dashboard that remains open during review sessions</li>
+        <li>Parses Navisworks HTML reports instantly using optimized fallback search strategies</li>
+        <li>Automates 3D Section Box isolation around colliding entities on the fly</li>
+        <li>Applies instant graphic overrides to distinguish clashing elements</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~6 hrs/coordination session saved</div>
-        <div class="tool-tags"><span class="tag">WPF</span><span class="tag">Section Box</span><span class="tag">Navisworks</span></div>
+        <div class="tool-roi">⏱ ~6 hrs / coordination session saved</div>
+        <div class="tool-tags"><span class="tag">WPF-UI</span><span class="tag">SectionBox API</span><span class="tag">Navisworks Parser</span></div>
       </div>
     </div>
 
-    <div class="tool-card" style="--card-accent:var(--orange)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">BIM Smart Scan</div><div class="tool-version">v1.0 · View Range QC Colorizer</div></div>
+        <div><div class="tool-name">BIM Smart Scan</div><div class="tool-version">v1.5 · View Range Diagnostics</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"View ranges incorrectly set across a 200-view model. Elements cut at wrong heights. Not visible until printing."</p>
+      <p class="tool-pain">"Inconsistently set view ranges cause structural beams and structural framing elements to disappear or display incorrectly on printed plan sheets."</p>
       <ul class="tool-features">
-        <li>Scans all views for range compliance</li>
-        <li>Colorizes by status in a single click</li>
-        <li>Exceptions report with clickable element links</li>
+        <li>Scans model structures to verify strict View Range value enforcement</li>
+        <li>Highlights non-compliant views automatically via interactive graphical tables</li>
+        <li>Features quick-fix overrides to apply master view range templates in bulk</li>
+        <li>Generates direct user links to isolate problematic objects</li>
       </ul>
       <div class="tool-footer">
-        <div class="tool-roi">⏱ ~4 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">View API</span><span class="tag">pyRevit</span></div>
+        <div class="tool-roi">⏱ ~4 hrs / structural model saved</div>
+        <div class="tool-tags"><span class="tag">ViewRange API</span><span class="tag">Model Integrity</span><span class="tag">QC</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STRUCTURAL ANNOTATION (renamed from Detailing) -->
 <section class="section reveal" id="annotation">
   <div class="section-label">Category 04</div>
-  <h2 class="section-title">Structural Annotation</h2>
-  <p class="section-desc">Automate structural dimensioning and annotation — columns, shafts, footings, slabs, and drawing cleanliness.</p>
+  <h2 class="section-title">Structural Annotation & Dimensioning</h2>
+  <p class="section-desc">Automate complex structural dimensioning configurations and cleanup operations for clean construction drawings.</p>
 
   <div class="tools-grid">
-    <div class="tool-card" style="--card-accent:var(--purple)">
+    <div class="tool-card">
       <div class="tool-header">
-        <div><div class="tool-name">Column-to-Grid Dimensioner</div><div class="tool-version">v1.0 · Universal Grid Dimensioner</div></div>
+        <div><div class="tool-name">Column-to-Grid Dimensioner</div><div class="tool-version">v1.0 · Non-Orthogonal Processor</div></div>
         <div class="tool-status status-prod">PRODUCTION</div>
       </div>
-      <p class="tool-pain">"Dimensioning columns to skewed grids manually. Standard Revit dimension tool fails on non-orthogonal layouts."</p>
+      <p class="tool-pain">"Standard Revit dimensioning features completely fail when trying to associate skewed concrete columns with non-orthogonal grid systems."</p>
       <ul class="tool-features">
-        <li>Handles all grid orientations including skewed grids</li>
-        <li>LCS GetTransform() + cross-product for parallel detection</li>
-        <li>Extends grids that don't geometrically intersect columns</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~5 hrs/drawing saved</div>
-        <div class="tool-tags"><span class="tag">Dimension API</span><span class="tag">Grid Geometry</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--purple)">
-      <div class="tool-header">
-        <div><div class="tool-name">Shaft Opening Dimensions</div><div class="tool-version">v1.0 · Auto-Dimension Shaft Openings</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Manual shaft dimensioning across dozens of floors — inconsistent across drawings."</p>
-      <ul class="tool-features">
-        <li>Temporary detail lines for stable geometric references</li>
-        <li>Deleted in same transaction after dimensioning</li>
-        <li>Consistent output across all shaft types and floors</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~3 hrs/drawing saved</div>
-        <div class="tool-tags"><span class="tag">Dimension API</span><span class="tag">Detail Lines</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--purple)">
-      <div class="tool-header">
-        <div><div class="tool-name">Footing & Slab Dimensions</div><div class="tool-version">v1.0 · Foundation Dimensioner</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Dimensioning footings and slabs manually on foundation plans — repetitive work, easy to miss elements."</p>
-      <ul class="tool-features">
-        <li>Auto-dimensions isolated footings to grid lines</li>
-        <li>Slab edge and opening dimensioning</li>
-        <li>Batch-processes entire foundation plan in one click</li>
-        <li>Handles rectangular, L-shaped, and combined footings</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~4 hrs/drawing saved</div>
-        <div class="tool-tags"><span class="tag">Dimension API</span><span class="tag">Foundation</span><span class="tag">Slab API</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--purple)">
-      <div class="tool-header">
-        <div><div class="tool-name">Clean Duplicated Annotations</div><div class="tool-version">v1.0 · Annotation Cleaner</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"After batch dimensioning or importing views, duplicate dimension tags and annotations accumulate — messy drawings before submission."</p>
-      <ul class="tool-features">
-        <li>Detects duplicate dimensions, tags, and text notes</li>
-        <li>Preview mode: review what will be deleted before applying</li>
-        <li>Scope: current view, selected views, or entire project</li>
-        <li>HTML report of everything removed</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~2 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">Annotation API</span><span class="tag">Dimension API</span><span class="tag">Tag API</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STRUCTURAL MODELING (new category) -->
-<section class="section reveal" id="modeling">
-  <div class="section-label">Category 05</div>
-  <h2 class="section-title">Structural Modeling</h2>
-  <p class="section-desc">Automate structural element creation, alignment, and model quality — from drop panels to foundation positioning.</p>
-
-  <div class="tools-grid">
-    <div class="tool-card" style="--card-accent:var(--green)">
-      <div class="tool-header">
-        <div><div class="tool-name">Drop Panel Creator</div><div class="tool-version">v1.0 · Flat Slab Drop Panel Generator</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Creating drop panels manually at every column in a flat slab — 80 columns, 80 drop panels, each one placed and sized individually."</p>
-      <ul class="tool-features">
-        <li>Auto-detects all structural columns in current level</li>
-        <li>Creates drop panel geometry at each column location</li>
-        <li>Configurable: size, thickness, offset from column face</li>
-        <li>Consistent dimensions across all drops in one operation</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~6 hrs/floor saved</div>
-        <div class="tool-tags"><span class="tag">Floor API</span><span class="tag">Geometry</span><span class="tag">Column API</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--green)">
-      <div class="tool-header">
-        <div><div class="tool-name">Drop Panel & Footing Aligner</div><div class="tool-version">v1.0 · Element Alignment Tool</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Drop panels and footings placed at slightly wrong positions due to manual entry — misaligned with column centerlines by 5-20mm."</p>
-      <ul class="tool-features">
-        <li>Snaps drop panels and footings to column centerlines</li>
-        <li>Batch-aligns all elements in the model or selection</li>
-        <li>Reports elements that were moved with offset values</li>
-        <li>Tolerance setting: flag vs auto-fix</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~3 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">Element Move</span><span class="tag">Geometry</span><span class="tag">Foundation</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--green)">
-      <div class="tool-header">
-        <div><div class="tool-name">Add Top Reinforcement</div><div class="tool-version">v1.0 · Top Steel Parameter Manager</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Top reinforcement information scattered across notes and hand-written tables — not in the model, not in schedules."</p>
-      <ul class="tool-features">
-        <li>Adds top reinforcement shared parameters to slabs/beams</li>
-        <li>Batch-assigns reinforcement values from a review panel</li>
-        <li>Values appear in Revit schedules automatically</li>
-        <li>Supports bar diameter, spacing, and cover settings</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~4 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">Shared Params</span><span class="tag">Slab API</span><span class="tag">Reinforcement</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--green)">
-      <div class="tool-header">
-        <div><div class="tool-name">Select Duplicated Elements</div><div class="tool-version">v1.0 · Duplicate Element Detector</div></div>
-        <div class="tool-status status-prod">PRODUCTION</div>
-      </div>
-      <p class="tool-pain">"Copy-paste errors leave duplicate structural elements at the same position — invisible in 3D but causing incorrect quantities and ETABS export issues."</p>
-      <ul class="tool-features">
-        <li>Scans model for elements occupying the same location</li>
-        <li>Highlights duplicates in a dedicated 3D view</li>
-        <li>Category filter: columns, beams, walls, foundations</li>
-        <li>One-click select for review before deletion</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~2 hrs/model saved + QA compliance</div>
-        <div class="tool-tags"><span class="tag">Geometry Check</span><span class="tag">3D View API</span><span class="tag">Filter</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IN DEVELOPMENT -->
-<section class="section reveal" id="dev">
-  <div class="section-label">Category 06</div>
-  <h2 class="section-title">In Development</h2>
-  <p class="section-desc">The next generation — from analysis integration to knowledge systems that capture 25+ years of Dar Al-Handasah structural expertise.</p>
-
-  <div class="tools-grid">
-    <div class="tool-card" style="--card-accent:var(--yellow)">
-      <div class="tool-header">
-        <div><div class="tool-name">ETABS Integration System</div><div class="tool-version">3-Script Suite · Revit ↔ ETABS</div></div>
-        <div class="tool-status status-dev">IN DEVELOPMENT</div>
-      </div>
-      <p class="tool-desc">Complete bidirectional Revit ↔ ETABS workflow: clean the analytical model for export, import results back as Revit parameters, generate structural schedules automatically.</p>
-      <ul class="tool-features">
-        <li>Analytical Model Fixer: node snapping + line offset correction</li>
-        <li>ETABS Results Importer: Excel → Revit parameters (Pu, Mux, Muy, Vu)</li>
-        <li>Structural Schedule Generator: column + beam schedules from results</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ Est. ~25 hrs/project saved</div>
-        <div class="tool-tags"><span class="tag">AnalyticalMember</span><span class="tag">openpyxl</span><span class="tag">SharedParams</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--yellow)">
-      <div class="tool-header">
-        <div><div class="tool-name">Structural Knowledge Library</div><div class="tool-version">Strategic · Knowledge Capture System</div></div>
-        <div class="tool-status status-plan">PLANNING</div>
-      </div>
-      <p class="tool-desc">Transforms 25+ years of Dar Al-Handasah structural design knowledge from engineers' heads into a queryable library. Bay size + floor count → recommended structural system.</p>
-      <ul class="tool-features">
-        <li>Library Builder: UI for senior engineers to input design rules</li>
-        <li>Bay Detector: reads Revit grids, calculates bay dimensions</li>
-        <li>System Suggester: column/beam/slab recommendation from library</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ Est. ~40 hrs/project saved</div>
-        <div class="tool-tags"><span class="tag">Grid API</span><span class="tag">JSON Library</span><span class="tag">Knowledge System</span></div>
-      </div>
-    </div>
-
-    <div class="tool-card" style="--card-accent:var(--yellow)">
-      <div class="tool-header">
-        <div><div class="tool-name">Structural Framing Splitter</div><div class="tool-version">v1.0 · Beam Auto-Splitter</div></div>
-        <div class="tool-status status-dev">IN DEVELOPMENT</div>
-      </div>
-      <p class="tool-desc">Detects all beam-column intersections and splits continuous beams at exact intersection points — essential for correct analytical model and clean ETABS export.</p>
-      <ul class="tool-features">
-        <li>Detects all beam-column intersections geometrically</li>
-        <li>Splits at exact intersection point</li>
-        <li>Correct analytical model — no continuous beams through columns</li>
-      </ul>
-      <div class="tool-footer">
-        <div class="tool-roi">⏱ ~4 hrs/model saved</div>
-        <div class="tool-tags"><span class="tag">Framing API</span><span class="tag">Geometry</span><span class="tag">Intersection</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TECH STACK -->
-<section class="section reveal">
-  <div class="section-label">Technical Stack</div>
-  <h2 class="section-title">Built On</h2>
-  <p class="section-desc">Production-tested technology stack for structural BIM automation.</p>
-  <div class="stack-grid">
-    <div class="stack-item"><span class="stack-icon">⚙️</span>pyRevit</div>
-    <div class="stack-item"><span class="stack-icon">🐍</span>IronPython 2.7</div>
-    <div class="stack-item"><span class="stack-icon">🏗️</span>Revit API</div>
-    <div class="stack-item"><span class="stack-icon">🖥️</span>WinForms</div>
-    <div class="stack-item"><span class="stack-icon">📋</span>WPF / XAML</div>
-    <div class="stack-item"><span class="stack-icon">📄</span>JSON Config</div>
-    <div class="stack-item"><span class="stack-icon">🔗</span>Navisworks API</div>
-    <div class="stack-item"><span class="stack-icon">📊</span>ETABS COM API</div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section reveal" id="contact">
-  <div class="contact-inner">
-    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;margin-bottom:1rem">GET IN TOUCH</p>
-    <h2 class="contact-title">Let's Build<br><span>Together</span></h2>
-    <p class="contact-desc">Open to consulting, custom BIM automation development, and BIM training for structural teams across MENA & Gulf region.</p>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/mostafa-ibrahem-01847a132/" target="_blank" class="contact-btn btn-primary">LinkedIn Profile ↗</a>
-      <a href="mailto:mostafa.nour@dar.com" class="contact-btn btn-secondary">Send Email</a>
-    </div>
-    <p style="margin-top:2rem;font-size:.8rem;color:var(--muted)">
-      <strong style="color:var(--text)">Dar Al-Handasah (Shair and Partners)</strong><br>
-      Dubai International Airport · Doha Port · AL KHAFJI Land Port · AL WAAB City · Emaar Square
-    </p>
-  </div>
-</section>
-
-<footer>
-  <p>BIM Agentic · Eng. Mostafa Nour · Dar Al-Handasah · 2026</p>
-  <p style="margin-top:.5rem;opacity:.5">Structural BIM Automation · pyRevit · Revit API · IronPython 2.7</p>
-</footer>
-
-<script>
-// Hamburger menu toggle
-const hamburger = document.getElementById('navHamburger');
-const navMenu   = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', ()=>{
-  hamburger.classList.toggle('open');
-  navMenu.classList.toggle('open');
-});
-
-// Close menu when a nav link is clicked
-navMenu.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    hamburger.classList.remove('open');
-    navMenu.classList.remove('open');
-  });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
-  })
-},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{
-  let current = '';
-  sections.forEach(s=>{
-    if(window.scrollY >= s.offsetTop - 80) current = s.id;
-  });
-  navLinks.forEach(a=>{
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-},{passive:true});
-</script>
-</body>
-</html>
+        <li>Employs LCS GetTransform math alongside cross-products for skewed grid alignment</li>
+        <li>Maintains robust multi-reference dimension arrays without geometric breakages</li>
+        <li>Ext
